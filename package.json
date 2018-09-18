@@ -1,0 +1,22 @@
+{
+  "name": "notesapp_js",
+  "version": "1.0.0",
+  "description": "Notes App created in pure JS",
+  "main": "note_controller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsamAl-Dabagh/notesapp_js.git"
+  },
+  "author": "Esam Al-Dabagh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsamAl-Dabagh/notesapp_js/issues"
+  },
+  "homepage": "https://github.com/EsamAl-Dabagh/notesapp_js#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

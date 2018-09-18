@@ -5,7 +5,6 @@ function testReturnsHtml(){
   var htmlString = "<ul><li>I love Javascript</li><li>I love Ruby</li></ul>"
   var notebookView = new NotebookView(notebook);
 
-  console.log(notebookView.returnHtml());
   assert.isTrue("Returns a string of HTML", notebookView.returnHtml() === htmlString);
 }
 testReturnsHtml();
