@@ -3,9 +3,9 @@
     var note = new Note("our first note");
 
     if (note._text !== "our first note") {
-      throw new Error("note is empty")
+      throw new Error("Note is empty")
     } else {
-      console.log("This worked")
+      console.log("Test passed: Note created.")
     }
   }
   testNoteTakesAnArgument();
@@ -19,7 +19,7 @@
     if (note.returnText() !== "our first note") {
       throw new Error("Did not match text")
     } else {
-      console.log("returnText worked");
+      console.log("Test Passed: returnText worked.");
     }
   }
 
