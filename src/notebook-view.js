@@ -5,10 +5,16 @@
 
   NotebookView.prototype.returnHtml = function(){
     var allNotes = this.notebook.returnAllNotes();
-    var joined = allNotes.join("</li><li>")
-    var allNotesJoined = "<li>" + joined + "</li>"
-    return allNotesJoined
 
+    var joined = "<ul>"
+
+    allNotes.forEach(function(note) {
+      var text = note.returnText();
+      joined = joined + "<li>" + text + "</li>";
+    });
+
+    var allNotesJoined = joined + "</ul>";
+    return allNotesJoined
   }
 
   exports.NotebookView = NotebookView;
