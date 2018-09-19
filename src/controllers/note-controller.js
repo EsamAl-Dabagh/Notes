@@ -10,7 +10,6 @@
   }
 
   NoteController.prototype.createView = function() {
-
     var htmlString = this.view.returnHtml();
 
     var element = document.getElementById("app");
