@@ -26,7 +26,7 @@ function Element() {
 }
 
 // SET-UP
-var controller = new NoteController()
+var controller = new NoteController(new NotebookDouble(), NotebookViewDouble)
 
 
 // TEST
@@ -37,3 +37,8 @@ function testNoteControllerInstantiation() {
 }
 testNoteControllerInstantiation();
 
+function testNoteControllerRespondsToAddNote() {
+  controller.addNote("A note");
+  assert.isTrue("NoteController calls createNote on Notebook", createNoteCounter === 1);
+}
+testNoteControllerRespondsToAddNote();
