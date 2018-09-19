@@ -6,6 +6,7 @@
 
   NoteController.prototype.addNote = function(text) {
     this.notebook.createNote(text);
+    this.createView();
   }
 
   NoteController.prototype.createView = function() {
