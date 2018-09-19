@@ -33,6 +33,7 @@ var controller = new NoteController()
 
 function testNoteControllerInstantiation() {
   assert.isTrue("NoteController instantiates with Notebook", controller.notebook);
+  assert.isTrue("NoteController instantiates with NotebookView", controller.view);
 }
-
 testNoteControllerInstantiation();
+

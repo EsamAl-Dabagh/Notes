@@ -1,6 +1,7 @@
 (function(exports) {
-  function NoteController(notebook = new Notebook) {
-    this.notebook = notebook
+  function NoteController(notebook = new Notebook, view = NotebookView) {
+    this.notebook = notebook;
+    this.view = new view(this.notebook)
   }
 
   exports.NoteController = NoteController;
