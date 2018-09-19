@@ -11,7 +11,7 @@ function NotebookDouble() {
 
 var createNoteCounter = 0;
 
-NotebookDouble.prototype.createNote() {
+NotebookDouble.prototype.createNote = function() {
   createNoteCounter++;
 }
 
@@ -32,5 +32,7 @@ var controller = new NoteController()
 // TEST
 
 function testNoteControllerInstantiation() {
-
+  assert.isTrue("NoteController instantiates with Notebook", controller.notebook);
 }
+
+testNoteControllerInstantiation();
