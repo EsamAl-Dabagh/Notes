@@ -1,6 +1,7 @@
 (function(exports) {
-  function NoteController(notebook) {
-    this.notebook = new notebook();
+  function NoteController(notebook, view) {
+    this.notebook = notebook;
+    this.view = new view(this.notebook);
   }  
 
   NoteController.prototype.addNote = function(text) {
@@ -9,9 +10,8 @@
   }
 
   NoteController.prototype.createView = function() {
-    var view = new NotebookView(this.notebook);
 
-    var htmlString = view.returnHtml();
+    var htmlString = this.view.returnHtml();
 
     var element = document.getElementById("app");
 

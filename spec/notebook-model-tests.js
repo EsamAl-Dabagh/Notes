@@ -1,7 +1,7 @@
 function testNotebookInstantiate(){
   var notebook = new Notebook();
 
-  assert.isTrue("Notebook instantitates with empty array",notebook.allNotes.length === 0);
+  assert.isTrue("Notebook instantitates with empty array", notebook.allNotes.length === 0);
 }
 testNotebookInstantiate();
 
@@ -18,6 +18,6 @@ function testReturnNoteBookNotes(){
   notebook.createNote("I love Javascript")
 
   var returnedNotes = notebook.returnAllNotes();
-  assert.isTrue ("Returns the text of a note",returnedNotes[0].returnText() === "I love Javascript");
+  assert.isTrue ("Returns the text of a note", returnedNotes[0].returnText() === "I love Javascript");
 }
 testReturnNoteBookNotes();
