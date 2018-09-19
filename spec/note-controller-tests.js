@@ -17,7 +17,7 @@ NotebookDouble.prototype.createNote = function() {
 
 function NotebookViewDouble() {}
 
-NotebookViewDouble.prototype.returnHTML = function() {
+NotebookViewDouble.prototype.returnHtml = function() {
   return "<ul><li><div>Some text</div></li><ul>";
 }
 
@@ -30,7 +30,6 @@ var controller = new NoteController(new NotebookDouble(), NotebookViewDouble)
 
 
 // TEST
-
 function testNoteControllerInstantiation() {
   assert.isTrue("NoteController instantiates with Notebook", controller.notebook);
   assert.isTrue("NoteController instantiates with NotebookView", controller.view);
@@ -42,3 +41,17 @@ function testNoteControllerRespondsToAddNote() {
   assert.isTrue("NoteController calls createNote on Notebook", createNoteCounter === 1);
 }
 testNoteControllerRespondsToAddNote();
+
+function testCreateView() {
+  assert.isTrue("createView returns HTML string from view", controller.createView() === "<ul><li><div>Some text</div></li><ul>");
+}
+testCreateView();
+
+function testAddNoteToPage() {
+  controller.addNote("Some text");
+  var item = document.getElementById("app");
+
+  console.log(item);
+  assert.include("When addNote is executed text is added to page", item.innerHTML, "<ul><li><div>Some text</div></li><ul>");
+}
+testAddNoteToPage();

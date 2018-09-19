@@ -8,5 +8,16 @@
     this.notebook.createNote(text);
   }
 
+  NoteController.prototype.createView = function() {
+
+    var htmlString = this.view.returnHtml();
+
+    var element = document.getElementById("app");
+
+    element.innerHTML = htmlString;
+
+    return htmlString;
+  }
+
   exports.NoteController = NoteController;
 })(this);

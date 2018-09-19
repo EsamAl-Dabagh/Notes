@@ -5,5 +5,14 @@ var assert = {
     } else {
       console.log(`Test passed: ${description}`);
     }
+  },
+
+  include: function(description, thingToCheck, thingToInclude) {
+    if (thingToCheck.includes(thingToInclude)) {
+      console.log(`Test passed: ${description}`);
+    } else {
+      throw new Error(`Assertion failed: '${thingToCheck}' does not include '${thingToInclude}'`)
+    }
   }
+
 }
