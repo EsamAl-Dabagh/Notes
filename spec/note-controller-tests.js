@@ -43,15 +43,10 @@ function testNoteControllerRespondsToAddNote() {
 testNoteControllerRespondsToAddNote();
 
 function testCreateView() {
-  assert.isTrue("createView returns HTML string from view", controller.createView() === "<ul><li><div>Some text</div></li><ul>");
-}
-testCreateView();
-
-function testAddNoteToPage() {
   controller.addNote("Some text");
+  controller.createView();
   var item = document.getElementById("app");
 
-  console.log(item);
   assert.include("When addNote is executed text is added to page", item.innerHTML, "<ul><li><div>Some text</div></li><ul>");
 }
-testAddNoteToPage();
+testCreateView();
