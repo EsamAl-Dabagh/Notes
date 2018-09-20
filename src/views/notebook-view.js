@@ -9,7 +9,7 @@
     var joined = "<ul>"
 
     allNotes.forEach(function(note) {
-      var text = note.returnText();
+      var text = note.returnText().slice(0, 20);
       joined = joined + "<li>" + text + "</li>";
     });
 
