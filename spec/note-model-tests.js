@@ -25,3 +25,17 @@
 
   testNoteReturnsText();
 })(this);
+
+(function(exports) {
+  function testHasID() {
+    var note = new Note("This is a note", 1);
+
+    if (note.returnID()) {
+      console.log("Test Passed: has ID")
+    } else {
+      throw new Error("Does not have an ID");
+    }
+  }
+
+  testHasID();
+})(this);

@@ -21,3 +21,10 @@ function testReturnNoteBookNotes(){
   assert.isTrue ("Returns the text of a note", returnedNotes[0].returnText() === "I love Javascript");
 }
 testReturnNoteBookNotes();
+
+function testAddsUniqueIDtoEachNote() {
+  var notebook = new Notebook();
+  var firstNote = notebook.createNote("Here be some text");
+  var secondNote = notebook.createNote("This is another note");
+
+}
