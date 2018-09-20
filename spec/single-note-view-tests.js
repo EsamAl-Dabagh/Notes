@@ -1,19 +1,13 @@
-// MOCKS
-function NoteDouble() {}
-NoteDouble.prototype.returnText = function() {
-  return "Some text";
-}
-
-function NotebookDouble() {
-  this.allNotes = [new NoteDouble()];
-}
-
-
+// SET UP
+var singleNoteView = new SingleNoteView(new Note("Some Text"));
 
 // TESTS
 function testSingleNoteViewInstantiation() {
-  var singleNoteView = new SingleNoteView(new NotebookDouble());
-
-  assert.isTrue("SingleNoteView instantiates with a Notebook instance", singleNoteView.notebook !== undefined);
+  assert.isTrue("SingleNoteView instantiates with an instance of Note", singleNoteView.note.returnText() === "Some Text");
 }
 testSingleNoteViewInstantiation();
+
+function testReturnHtml() {
+  assert.isTrue("returnHtml will return a string of HTML", singleNoteView.returnHtml() === "<div class='noteSingle'>Some Text</div>");
+}
+testReturnHtml();
