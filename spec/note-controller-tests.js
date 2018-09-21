@@ -50,25 +50,3 @@ function testCreateView() {
   assert.include("When addNote is executed text is added to page", item.innerHTML, "<ul><li><div>Some text</div></li><ul>");
 }
 testCreateView();
-
-function testHasNoteCounter() {
-  assert.isTrue("Has a Note Counter", controller.noteCounter());
-}
-testHasNoteCounter();
-
-function testCounterIncrease() {
-  var controller2 = new NoteController();
-  
-  controller2.counterIncrease();
-
-  assert.isTrue("Increases _counter by one", controller2._counter === 1);
-}
-testCounterIncrease();
-
-function testCounterIncreaseWhenNoteAdded() {
-  controller._counter = 0;
-  controller.addNote("Some more text")
-
-  assert.isTrue("It increases the counter by one", controller.noteCounter() === 1);
-}
-testCounterIncreaseWhenNoteAdded();
