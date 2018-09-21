@@ -22,5 +22,17 @@
     this._counter++;
   }
 
+  Notebook.prototype.findNote = function(id) {
+    var matchedNote;
+
+    this.allNotes.forEach(function(note) {
+      if (note.returnID() === id) {
+        matchedNote = note;
+      }
+    });
+
+    return matchedNote;
+  }
+
   exports.Notebook = Notebook;
 })(this);

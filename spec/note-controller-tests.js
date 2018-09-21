@@ -33,6 +33,7 @@ var controller = new NoteController(new NotebookDouble(), NotebookViewDouble)
 function testNoteControllerInstantiation() {
   assert.isTrue("NoteController instantiates with Notebook", controller.notebook);
   assert.isTrue("NoteController instantiates with NotebookView", controller.view);
+  assert.isTrue("NoteController instantiates with a SingleNoteView", controller.singleView);
 }
 testNoteControllerInstantiation();
 
@@ -50,3 +51,16 @@ function testCreateView() {
   assert.include("When addNote is executed text is added to page", item.innerHTML, "<ul><li><div>Some text</div></li><ul>");
 }
 testCreateView();
+
+// function testCreateSingleView() {
+//   controller.addNote("This is a long note: It just keeps on going...and going. Not quite sure when it's going to stop.");
+//   controller.createSingleView()
+//   var item = document.getElementById("app");
+
+//   assert.isTrue("Controller responds to createSingleView", controller.createSingleView());
+// }
+// testCreateSingleView();
+
+// function testShowNote() {
+
+// }

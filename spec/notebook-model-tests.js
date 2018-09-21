@@ -27,6 +27,7 @@ function testAddsUniqueIDtoEachNote() {
   var firstNote = notebook.createNote("Here be some text");
   var secondNote = notebook.createNote("This is another note");
 
+  
 }
 
 function testHasNoteCounter() {
@@ -52,3 +53,12 @@ function testCounterIncreaseWhenNoteAdded() {
   assert.isTrue("It increases the counter by one", notebook.noteCounter() === 1);
 }
 testCounterIncreaseWhenNoteAdded();
+
+function testFindNote() {
+  var notebook = new Notebook();
+  notebook.createNote("Test Note A");
+  notebook.createNote("Test Note B");
+
+  assert.isTrue("It can find a note by ID", notebook.findNote(2).returnText() === "Test Note B")
+}
+testFindNote();
