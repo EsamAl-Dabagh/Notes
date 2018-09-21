@@ -26,9 +26,12 @@ function testAddsUniqueIDtoEachNote() {
   var notebook = new Notebook();
   var firstNote = notebook.createNote("Here be some text");
   var secondNote = notebook.createNote("This is another note");
+  var allNotes = notebook.returnAllNotes()
 
-  
+  assert.isTrue("First note has an ID of 1", allNotes[0].returnID() === 1);
+  assert.isTrue("Second note has an ID of 2", allNotes[1].returnID() === 2);
 }
+testAddsUniqueIDtoEachNote();
 
 function testHasNoteCounter() {
   var notebook = new Notebook();
