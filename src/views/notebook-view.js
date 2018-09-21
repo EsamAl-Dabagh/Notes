@@ -10,7 +10,7 @@
 
     allNotes.forEach(function(note) {
       var text = note.returnText().slice(0, 20);
-      joined = joined + "<li>" + text + "</li>";
+      joined = joined + `<li><a href='#notes/${note.returnID()}'>${text}</a></li>`;
     });
 
     var allNotesJoined = joined + "</ul>";
